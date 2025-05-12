@@ -24,7 +24,7 @@ const createTask = async(req,res) => {
 const getTasks = async(req,res) => {
     try{
         const tasks = await taskSchema.find().sort({createdAt:-1});
-        if(tasks.length > 0){
+        if(tasks){
             res.status(200).json({
                 message:"Getting All Tasks Successfully",
                 data:tasks
