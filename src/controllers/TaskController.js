@@ -69,7 +69,7 @@ const deleteTask = async(req,res) => {
     try{
         const deletedTask = await taskSchema.findByIdAndDelete(req.params.id);
         if(deletedTask){
-            res.status(204).json({
+            res.status(200).json({
                 message:"Task Deleted Successfully"
             })
         }else{
