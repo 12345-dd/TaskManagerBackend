@@ -4,7 +4,10 @@ const app = express();
 const cors = require("cors");
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: 'https://taskmancer.netlify.app',
+  credentials: true
+}));
 
 mongoose.connect("mongodb+srv://mayurpatil98607:mayur123@cluster0.kulyrnk.mongodb.net/task-manager").then(()=>{
     console.log("Database is Connected");
